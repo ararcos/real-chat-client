@@ -1,3 +1,4 @@
+<app-spinner *ngIf="spinner"></app-spinner>
 <div class="container">
     <h1>Chat App</h1>
     <app-username (userNameEvent)="updateUserName($event)" *ngIf="!username"></app-username>

@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  spinner = false;
   username = '';
   stringMessage = '';
   messageList: MessageI[] = [];
@@ -28,6 +29,7 @@ export class ChatComponent implements OnInit {
     this.conectChatServe();
   }
   conectChatServe(){
+    this.spinner=true;
     this.socket = client.io(`${environment.chatServer}/?name=${this.username}`);
     this.socket.on('users',(users:UserI[])=>{
       this.userList = users;
@@ -36,6 +38,7 @@ export class ChatComponent implements OnInit {
     this.socket.on('messages',(messages: MessageI[])=>{
       this.messageList = messages.map((element)=>{
         element.mine = element.user?.name==this.username;
+        this.spinner = false;
         return element;
       });
     });

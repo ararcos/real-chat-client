@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ChatComponent } from './container/chat/chat.component';
 import { UsernameComponent } from './component/username/username.component';
 import { FormsModule } from '@angular/forms';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    UsernameComponent
+    UsernameComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
