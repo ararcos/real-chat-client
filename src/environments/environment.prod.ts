@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  chatServer: 'https://chat-app-porth.herokuapp.com'
 };
